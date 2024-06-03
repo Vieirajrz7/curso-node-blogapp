@@ -1,0 +1,31 @@
+<div class="jumbotron" style="background-color: #ccc; padding: 70px 50px;">
+    <h1 class="display-4">Seja bem-vindo ao Blog do Node!</h1>
+    <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to
+        featured content or information.</p>
+    <hr class="my-4">
+    <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+    {{#if user}}
+    <a class="btn btn-secondary btn-lg active" href="" role="button">Criar conta</a>
+    {{else}}
+    <a class="btn btn-primary btn-lg" href="/usuarios/registro" role="button">Criar conta</a>
+    {{/if}}
+</div>
+<hr>
+<h2>Postagens Recentes: </h2>
+<h1 id="teste"></h1>
+
+{{#each postagens}}
+<div class="card mt-3 mb-3">
+    <div class="card-body">
+        <h2>{{titulo}}</h2>
+        <p class="lead" style="font-size: 1.6rem;">{{descricao}}</p>
+        <a href="/postagem/{{slug}}"><button class="btn btn-success">Leia Mais</button></a>
+        <hr>
+        <small>Categoria: {{categoria.nome}}</small> <br>
+        <small>Data: {{date}}</small>
+    </div>
+</div>
+
+{{else}}
+<h3 style="color: #ccc;">Nenhuma Postagem Criada...</h3>
+{{/each}}
