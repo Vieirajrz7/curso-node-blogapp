@@ -17,7 +17,6 @@ const passport = require('passport');
 require('./config/auth')(passport);
 const { isLogged } = require('./helpers/isLogged');
 const db = require('./config/db');
-
 // Configurações
 
 // Sessão
